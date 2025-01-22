@@ -1,5 +1,13 @@
 function minDate(dates) {
   //write you code here
+	const dateObjects = dates.map(date => new Date(date));
+  
+  // Find the minimum date using the Math.min function
+  const minDateObject = new Date(Math.min(...dateObjects));
+  
+  // Convert the minimum date back to a string in the same format as the input
+  return minDateObject.toISOString().split("T")[0].replace(/-/g, "/");
+	
 }
 
 // Do not change the code
